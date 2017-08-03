@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 33230060509324342}
   - component: {fileID: 135362788632486274}
   - component: {fileID: 23897625714373674}
-  - component: {fileID: 114860563258370786}
+  - component: {fileID: 114126514368700232}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f3b591449a9c35e4e9c7dda3e5b19d10, type: 2}
+  - {fileID: 2100000, guid: 9db1aa76c4fa7cd4b92176432f1b9d7d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1312986382996938}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114860563258370786
+--- !u!114 &114126514368700232
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74443f0f6d8ec484ca66c7fa58df17b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
 --- !u!135 &135362788632486274
 SphereCollider:
   m_ObjectHideFlags: 1
