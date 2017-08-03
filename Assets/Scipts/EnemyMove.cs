@@ -21,7 +21,7 @@ public class EnemyMove : MonoBehaviour {
     {
         if (index > positions.Length - 1) return;//到达终点
         transform.Translate((positions[index].position - transform.position).normalized * Time.deltaTime * speed);
-        if (Vector3.Distance(positions[index].position, transform.position)<0.1f)
+        if (Vector3.Distance(positions[index].position, transform.position)<0.2f)
         {
             index++;
         }
