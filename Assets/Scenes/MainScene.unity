@@ -4835,7 +4835,7 @@ MonoBehaviour:
     count: 6
     rate: 0.2
   start: {fileID: 834461048}
-  waveRate: 3
+  waveRate: 1
 --- !u!4 &694739963
 Transform:
   m_ObjectHideFlags: 0

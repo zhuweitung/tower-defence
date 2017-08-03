@@ -19,11 +19,23 @@ public class EnemyMove : MonoBehaviour {
 
     void Move()
     {
-        if (index > positions.Length - 1) return;//到达终点
+        if (index > positions.Length - 1)
+        {
+            ReachEnd();
+            return;//到达终点
+        }
         transform.Translate((positions[index].position - transform.position).normalized * Time.deltaTime * speed);
         if (Vector3.Distance(positions[index].position, transform.position)<0.2f)
         {
             index++;
         }
+    }
+    void ReachEnd()
+    {
+        GameObject.Destroy(this.gameObject);
+    }
+    void OnDestroy()
+    {
+        EnemySpawner.countEnemyAlive--;
     }
 }
