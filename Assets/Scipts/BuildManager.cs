@@ -12,6 +12,7 @@ public class BuildManager : MonoBehaviour {
     private TurretData selectedTurretData;
     public Text moneyText;
     private int money = 1000;//初始金钱
+    public Animator moneyAnimator;
 
     void ChangeMoney(int change)
     {
@@ -50,7 +51,7 @@ public class BuildManager : MonoBehaviour {
                         else
                         {
                             //提示钱不够
-                            Debug.Log("钱不够~");
+                            moneyAnimator.SetTrigger("Flicker");
                         }
                     }
                     else
