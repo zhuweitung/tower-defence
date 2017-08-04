@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33025833915498320}
   - component: {fileID: 65293642996807074}
   - component: {fileID: 23019689232881950}
+  - component: {fileID: 114776746123050948}
   m_Layer: 8
   m_Name: MapCube
   m_TagString: Untagged
@@ -93,3 +94,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114776746123050948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1829086219772520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69207fe2afde38944a2dd221bf7d649a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretGo: {fileID: 0}
