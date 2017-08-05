@@ -38,7 +38,7 @@ public class BuildManager : MonoBehaviour {
                     //得到点击的mapCube
                     //GameObject mapCube = hit.collider.gameObject;
                     MapCube mapcube = hit.collider.GetComponent<MapCube>();
-                    Debug.Log(mapcube.name);
+                    //Debug.Log(mapcube.name);
                     //mapcube上没有炮台
                     if (mapcube.turretGo == null)
                     {
