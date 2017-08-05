@@ -106,3 +106,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretGo: {fileID: 0}
+  buildEffect: {fileID: 1313473206106198, guid: 79839f256eacc4b4482c22aec6ad81c7,
+    type: 2}
