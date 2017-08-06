@@ -16,15 +16,24 @@ public class Bullet : MonoBehaviour {
     }
     void Update()
     {
+        if (target == null)
+        {
+            Die();
+            return;
+        }
         transform.LookAt(target.position);
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         Vector3 dir = target.position - transform.position;
         if (dir.magnitude < distanceToTarget)
         {
             target.GetComponent<EnemyMove>().TakeDamage(damage);
-            GameObject effect= GameObject.Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
-            Destroy(effect, 1);
-            Destroy(this.gameObject);
+            Die();
         }
+    }
+    void Die()
+    {
+        GameObject effect = GameObject.Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
+        Destroy(effect, 1);
+        Destroy(this.gameObject);
     }
 }
