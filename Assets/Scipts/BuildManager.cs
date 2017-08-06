@@ -40,7 +40,7 @@ public class BuildManager : MonoBehaviour {
                     MapCube mapcube = hit.collider.GetComponent<MapCube>();
                     //Debug.Log(mapcube.name);
                     //mapcube上没有炮台
-                    if (mapcube.turretGo == null)
+                    if (selectedTurretData != null && mapcube.turretGo == null)
                     {
                         //金钱足够建造
                         if (money > selectedTurretData.cost)
@@ -54,7 +54,7 @@ public class BuildManager : MonoBehaviour {
                             moneyAnimator.SetTrigger("Flicker");
                         }
                     }
-                    else
+                    else if (mapcube.turretGo != null)
                     {
                         //升级炮台
                     }
