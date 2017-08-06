@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4481168214490190}
   - component: {fileID: 33312144442382002}
-  - component: {fileID: 135775621709525232}
   - component: {fileID: 23591371148998798}
   - component: {fileID: 114522717526372336}
   m_Layer: 0
@@ -95,15 +94,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   speed: 40
---- !u!135 &135775621709525232
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1488676080826346}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  explosionEffectPrefab: {fileID: 1067896301103470, guid: 77e402b95e8145f46acc4799f6d65a33,
+    type: 2}

@@ -38,4 +38,8 @@ public class EnemyMove : MonoBehaviour {
     {
         EnemySpawner.countEnemyAlive--;
     }
+    public void TakeDamage(int damage)
+    {
+
+    }
 }
