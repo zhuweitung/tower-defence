@@ -16,7 +16,12 @@ public class BuildManager : MonoBehaviour {
     public Animator moneyAnimator;
     public GameObject upgradeCanvas;
     public Button buttonUpgrade;
+    private Animator upgradeCanvasAnimator;
 
+    void Start()
+    {
+        upgradeCanvasAnimator = upgradeCanvas.GetComponent<Animator>();
+    }
     void ChangeMoney(int change)
     {
         money += change;
@@ -62,7 +67,8 @@ public class BuildManager : MonoBehaviour {
                         //升级炮台
                         if (mapcube.turretGo == selectedTurretGo&&upgradeCanvas.activeInHierarchy)
                         {
-                            HideUpgradeUI();
+                            StartCoroutine(HideUpgradeUI());
+                            //HideUpgradeUI();
                         }
                         else
                         {
@@ -97,12 +103,16 @@ public class BuildManager : MonoBehaviour {
     }
     void ShowUpgradeUI(Vector3 pos,bool isDisableUpgrade=false)
     {
+        StopCoroutine("HideUpgradeUI");
+        upgradeCanvas.SetActive(false);
         upgradeCanvas.SetActive(true);
         upgradeCanvas.transform.position = pos;
         buttonUpgrade.interactable = !isDisableUpgrade;
     }
-    void HideUpgradeUI()
+    IEnumerator HideUpgradeUI()
     {
+        upgradeCanvasAnimator.SetTrigger("Hide");
+        yield return new WaitForSeconds(0.8f);
         upgradeCanvas.SetActive(false);
     }
     public void OnUpgradeButtonDown()
