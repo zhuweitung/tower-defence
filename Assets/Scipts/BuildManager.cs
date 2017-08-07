@@ -9,10 +9,13 @@ public class BuildManager : MonoBehaviour {
     public TurretData missileTurretData;
     public TurretData standardTurretData;
     //当前选择的炮塔
-    private TurretData selectedTurretData;
+    private TurretData selectedTurretData;//当前UI面板上选择的要建造的炮台
+    private GameObject selectedTurretGo;//当前点击了的已建造在游戏中的炮台
     public Text moneyText;
     private int money = 1000;//初始金钱
     public Animator moneyAnimator;
+    public GameObject upgradeCanvas;
+    public Button buttonUpgrade;
 
     void ChangeMoney(int change)
     {
@@ -57,6 +60,15 @@ public class BuildManager : MonoBehaviour {
                     else if (mapcube.turretGo != null)
                     {
                         //升级炮台
+                        if (mapcube.turretGo == selectedTurretGo&&upgradeCanvas.activeInHierarchy)
+                        {
+                            HideUpgradeUI();
+                        }
+                        else
+                        {
+                            ShowUpgradeUI(mapcube.transform.position, mapcube.isUpgraded);
+                        }
+                        selectedTurretGo = mapcube.turretGo;
                     }
                 }
             }
@@ -82,5 +94,23 @@ public class BuildManager : MonoBehaviour {
         {
             selectedTurretData = standardTurretData;
         }
+    }
+    void ShowUpgradeUI(Vector3 pos,bool isDisableUpgrade=false)
+    {
+        upgradeCanvas.SetActive(true);
+        upgradeCanvas.transform.position = pos;
+        buttonUpgrade.interactable = !isDisableUpgrade;
+    }
+    void HideUpgradeUI()
+    {
+        upgradeCanvas.SetActive(false);
+    }
+    public void OnUpgradeButtonDown()
+    {
+
+    }
+    public void OnDestoryButtonDown()
+    {
+
     }
 }

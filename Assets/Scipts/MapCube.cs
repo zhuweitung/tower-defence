@@ -9,6 +9,8 @@ public class MapCube : MonoBehaviour {
     public GameObject buildEffect;//建造炮台时的粒子特效
     private Renderer renderer;
     private Color originalColor;
+    [HideInInspector]
+    public bool isUpgraded = false;//mapcube上的炮台是否升级过
     void Start()
     {
         renderer = GetComponent<Renderer>();
@@ -16,6 +18,7 @@ public class MapCube : MonoBehaviour {
     }
     public void BuildTurret(GameObject turretPrefab)
     {
+        isUpgraded = false;
         turretGo = GameObject.Instantiate(turretPrefab, transform.position, Quaternion.identity);
         GameObject effect = GameObject.Instantiate(buildEffect, transform.position, Quaternion.identity);
         Destroy(effect, 1);

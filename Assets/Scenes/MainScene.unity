@@ -5354,6 +5354,8 @@ MonoBehaviour:
     type: 2
   moneyText: {fileID: 171699925}
   moneyAnimator: {fileID: 171699927}
+  upgradeCanvas: {fileID: 739876643}
+  buttonUpgrade: {fileID: 1520880998}
 --- !u!1001 &713374956
 Prefab:
   m_ObjectHideFlags: 0
@@ -5504,12 +5506,12 @@ GameObject:
   - component: {fileID: 739876646}
   - component: {fileID: 739876645}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UpgradeCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &739876644
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5908,6 +5910,10 @@ Prefab:
     - target: {fileID: 4285410242693252, guid: 7cef93208642d754e940b3a5305fbaf8, type: 2}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937727626017590, guid: 7cef93208642d754e940b3a5305fbaf8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cef93208642d754e940b3a5305fbaf8, type: 2}
@@ -9821,7 +9827,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1520880999}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 694739964}
+        m_MethodName: OnUpgradeButtonDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1520880999
@@ -10630,7 +10647,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1729297023}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 694739964}
+        m_MethodName: OnDestoryButtonDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1729297023
