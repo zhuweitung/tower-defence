@@ -1,16 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMove : MonoBehaviour {
 
     public float speed = 10;
+    private int totalHp;
     public int hp = 150;
     private Transform[] positions;//拐点集合
     private int index = 0;
     public GameObject explosionEffect;
+    public Slider hpSlider;
 	// Use this for initialization
 	void Start () {
+        totalHp = hp;
         positions = WayPoints.positions;
 	}
 	
@@ -44,6 +48,7 @@ public class EnemyMove : MonoBehaviour {
     {
         if (hp <= 0) return;
         hp -= damage;
+        hpSlider.value = (float)hp / totalHp;
         if (hp <= 0)
         {
             Die();
