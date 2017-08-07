@@ -23,6 +23,7 @@ public class Turret : MonoBehaviour {
     private float timer = 0;//计时器
     public GameObject bulletPrefab;//子弹
     public Transform firePosition;
+    public Transform head;//炮台头部引用
 
     void Start()
     {
@@ -31,6 +32,12 @@ public class Turret : MonoBehaviour {
 
     void Update()
     {
+        if (enemys.Count > 0 && enemys[0] != null)
+        {
+            Vector3 targetPosition = enemys[0].transform.position;
+            targetPosition.y = head.position.y;
+            head.LookAt(targetPosition);
+        }
         timer += Time.deltaTime;
         if(enemys.Count>0&&timer>=attackRate)
         {
