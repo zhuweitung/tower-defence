@@ -11,7 +11,8 @@ public class MapCube : MonoBehaviour {
     private Color originalColor;
     [HideInInspector]
     public bool isUpgraded = false;//mapcube上的炮台是否升级过
-    private TurretData turretData;
+    [HideInInspector]
+    public  TurretData turretData;
     void Start()
     {
         renderer = GetComponent<Renderer>();
