@@ -53,5 +53,7 @@ public class MapCube : MonoBehaviour {
         isUpgraded = false;
         turretGo = null;
         turretData = null;
+        GameObject effect = GameObject.Instantiate(buildEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 1);
     }
 }
