@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -25,5 +26,14 @@ public class Game_Manager : MonoBehaviour
         enemySpawner.Stop();
         endUI.SetActive(true);
         endMessage.text="失 败";
+    }
+    public void OnButtonRetryDown()
+    {
+        //重载游戏场景
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void OnButtonMenuDown()
+    {
+        SceneManager.LoadScene(0);
     }
 }

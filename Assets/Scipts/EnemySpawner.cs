@@ -30,6 +30,13 @@ public class EnemySpawner : MonoBehaviour {
             }
             yield return new WaitForSeconds(waveRate);
         }
+        //所有生成的敌人均已消灭
+        while (countEnemyAlive > 0)
+        {
+            yield return 0;
+        }
+        //游戏胜利
+        Game_Manager.Instance.Win();
     }
     public void Stop()
     {
