@@ -26,6 +26,8 @@ public class Turret : MonoBehaviour {
     public Transform head;//炮台头部引用
     public bool useLaser = false;
     public LineRenderer laserRenderer;
+    public float damageRate=70;//激光的持续伤害
+    public GameObject laserEffect;//激光掉血特效
 
     void Start()
     {
@@ -52,6 +54,7 @@ public class Turret : MonoBehaviour {
         else if(enemys.Count>0)
         {
             if (laserRenderer.enabled == false) laserRenderer.enabled = true;
+            laserEffect.SetActive(true);
             if (enemys[0] == null)
             {
                 UpdateEnemys();
@@ -59,10 +62,16 @@ public class Turret : MonoBehaviour {
             if (enemys.Count > 0)
             {
                 laserRenderer.SetPositions(new Vector3[] { firePosition.position, enemys[0].transform.position });
+                enemys[0].GetComponent<EnemyMove>().TakeDamage(damageRate*Time.deltaTime);
+                laserEffect.transform.position = enemys[0].transform.position;
+                Vector3 pos = transform.position;
+                pos.y = enemys[0].transform.position.y;
+                laserEffect.transform.LookAt(pos);
             }
         }
         else
         {
+            laserEffect.SetActive(false);
             laserRenderer.enabled = false;
         }
     }
