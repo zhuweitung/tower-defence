@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74443f0f6d8ec484ca66c7fa58df17b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  hp: 150
+  speed: 35
+  hp: 120
   explosionEffect: {fileID: 1067896301103470, guid: 44cc5ce0dd6e3cb4091830bfe9a03ea2,
     type: 2}
   hpSlider: {fileID: 114479263385747734}
