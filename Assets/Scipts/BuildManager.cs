@@ -14,9 +14,9 @@ public class BuildManager : MonoBehaviour {
     public Text moneyText;
     private int money = 1000;//初始金钱
     public Animator moneyAnimator;
-    public GameObject upgradeCanvas;
-    public Button buttonUpgrade;
-    private Animator upgradeCanvasAnimator;
+    public GameObject upgradeCanvas;//升级面板
+    public Button buttonUpgrade;//升级按钮
+    private Animator upgradeCanvasAnimator;//升级面板弹入弹出动画
 
     void Start()
     {
