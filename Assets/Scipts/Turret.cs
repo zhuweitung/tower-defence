@@ -25,6 +25,7 @@ public class Turret : MonoBehaviour {
     public Transform firePosition;
     public Transform head;//炮台头部引用
     public bool useLaser = false;
+    public LineRenderer laserRenderer;
 
     void Start()
     {
@@ -48,9 +49,21 @@ public class Turret : MonoBehaviour {
                 Attack();
             }
         }
+        else if(enemys.Count>0)
+        {
+            if (laserRenderer.enabled == false) laserRenderer.enabled = true;
+            if (enemys[0] == null)
+            {
+                UpdateEnemys();
+            }
+            if (enemys.Count > 0)
+            {
+                laserRenderer.SetPositions(new Vector3[] { firePosition.position, enemys[0].transform.position });
+            }
+        }
         else
         {
-
+            laserRenderer.enabled = false;
         }
     }
     void Attack()
