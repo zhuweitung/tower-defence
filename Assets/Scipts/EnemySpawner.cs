@@ -8,9 +8,10 @@ public class EnemySpawner : MonoBehaviour {
     public Wave[] waves;
     public Transform start;
     public float waveRate = 1;// 每一波之间的时间间隔
-	// Use this for initialization
+    private Coroutine coroutine;
+
 	void Start () {
-        StartCoroutine(SpawnEnemy());
+        coroutine= StartCoroutine(SpawnEnemy());
 	}
     IEnumerator SpawnEnemy()
     {
@@ -29,5 +30,10 @@ public class EnemySpawner : MonoBehaviour {
             }
             yield return new WaitForSeconds(waveRate);
         }
+    }
+    public void Stop()
+    {
+        //StopCoroutine("SpawnEnemy");
+        StopCoroutine(coroutine);
     }
 }

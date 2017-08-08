@@ -38,6 +38,7 @@ public class EnemyMove : MonoBehaviour {
     }
     void ReachEnd()
     {
+        Game_Manager.Instance.Failed();
         GameObject.Destroy(this.gameObject);
     }
     void OnDestroy()

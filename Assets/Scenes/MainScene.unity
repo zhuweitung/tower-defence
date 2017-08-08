@@ -5342,6 +5342,7 @@ GameObject:
   - component: {fileID: 694739963}
   - component: {fileID: 694739962}
   - component: {fileID: 694739964}
+  - component: {fileID: 694739965}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5431,6 +5432,19 @@ MonoBehaviour:
   moneyAnimator: {fileID: 171699927}
   upgradeCanvas: {fileID: 739876643}
   buttonUpgrade: {fileID: 1520880998}
+--- !u!114 &694739965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 694739961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30091240442d07439e89e84ee4f62d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endUI: {fileID: 1271622913}
+  endMessage: {fileID: 1857466424}
 --- !u!1001 &713374956
 Prefab:
   m_ObjectHideFlags: 0
