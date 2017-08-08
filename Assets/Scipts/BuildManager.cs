@@ -10,7 +10,7 @@ public class BuildManager : MonoBehaviour {
     public TurretData standardTurretData;
     //当前选择的炮塔
     private TurretData selectedTurretData;//当前UI面板上选择的要建造的炮台
-    private GameObject selectedTurretGo;//当前点击了的已建造在游戏中的炮台
+    private MapCube selectedMapcube;//当前点击了的已建造在游戏中的炮台所在的mapcube
     public Text moneyText;
     private int money = 1000;//初始金钱
     public Animator moneyAnimator;
@@ -54,7 +54,7 @@ public class BuildManager : MonoBehaviour {
                         if (money > selectedTurretData.cost)
                         {
                             ChangeMoney(-selectedTurretData.cost);
-                            mapcube.BuildTurret(selectedTurretData.turretPrefab);
+                            mapcube.BuildTurret(selectedTurretData);
                         }
                         else
                         {
@@ -65,7 +65,7 @@ public class BuildManager : MonoBehaviour {
                     else if (mapcube.turretGo != null)
                     {
                         //升级炮台
-                        if (mapcube.turretGo == selectedTurretGo&&upgradeCanvas.activeInHierarchy)
+                        if (mapcube == selectedMapcube&&upgradeCanvas.activeInHierarchy)
                         {
                             StartCoroutine(HideUpgradeUI());
                             //HideUpgradeUI();
@@ -74,7 +74,7 @@ public class BuildManager : MonoBehaviour {
                         {
                             ShowUpgradeUI(mapcube.transform.position, mapcube.isUpgraded);
                         }
-                        selectedTurretGo = mapcube.turretGo;
+                        selectedMapcube = mapcube;
                     }
                 }
             }
@@ -117,10 +117,16 @@ public class BuildManager : MonoBehaviour {
     }
     public void OnUpgradeButtonDown()
     {
-
+        selectedMapcube.UpgradeTurret();
+        StopCoroutine("HideUpgradeUI");
+        StartCoroutine(HideUpgradeUI());
+        //HideUpgradeUI();
     }
     public void OnDestoryButtonDown()
     {
-
+        selectedMapcube.DestoryTurret();
+        StopCoroutine("HideUpgradeUI");
+        StartCoroutine(HideUpgradeUI());
+        //HideUpgradeUI();
     }
 }
