@@ -24,6 +24,7 @@ public class Turret : MonoBehaviour {
     public GameObject bulletPrefab;//子弹
     public Transform firePosition;
     public Transform head;//炮台头部引用
+    public bool useLaser = false;
 
     void Start()
     {
@@ -38,11 +39,18 @@ public class Turret : MonoBehaviour {
             targetPosition.y = head.position.y;
             head.LookAt(targetPosition);
         }
-        timer += Time.deltaTime;
-        if(enemys.Count>0&&timer>=attackRate)
+        if (!useLaser)
         {
-            timer = 0;
-            Attack();
+            timer += Time.deltaTime;
+            if (enemys.Count > 0 && timer >= attackRate)
+            {
+                timer = 0;
+                Attack();
+            }
+        }
+        else
+        {
+
         }
     }
     void Attack()
